@@ -1,4 +1,4 @@
-# A Large Undocumented Mortality Burden Caused by the Tropical Cyclone Climate of the United States
+# Mortality Caused by Tropical Cyclones in the United States
  Program: ReadMe
  
  Authors: Rachel Young and Solomon Hsiang
