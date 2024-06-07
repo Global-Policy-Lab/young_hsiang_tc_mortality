@@ -206,7 +206,7 @@ SI Figures and Tables requires data collection, regression, and projection steps
 - Figure SI2 : figures/appendix/figureSI2_windspeed_allstates.pdf ; created in 09-appendix-figures.do 
 - Figure SI4 : figures/appendix/figureSI4_mortality_allstates.pdf ; created in 09-appendix-figures.do
 - Figure SI5 : figures/appendix/figureSI5_USA_damage_maxs.pdf ; created in 04-main-figure1.do
-- Figure SI6 : figures/appendix
+- Figure SI6 : figures/appendix/figureSI6_plot_6storms_rain_wind.pdf ; created in 10-appendix-rain-wind-maps.R
 - Figure SI7 : figures/appendix/figureSI7_maxs_histcdf.pdf ; created in 09-appendix-figures.do
 - Figure SI8 : figures/appendix/figureSI4_examining_model_fit.pdf ; created in 09-appendix-figures.do
 - Figure SI9 : figures/appendix/figureSI9_residual_combined.pdf ; created in 09-appendix-figures.do
