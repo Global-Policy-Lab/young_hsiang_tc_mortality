@@ -433,7 +433,7 @@ graph export figures/randomization_boxplot_combined.png, replace
 //this is in the appendix
 graph combine figures/appendix/cross_panel.gph figures/appendix/within_month.gph  figures/appendix/within_panel.gph figures/appendix/total_rand.gph,  xcommon col(2) xsize(8) ysize(5)
 *graph export figures/appendix/randomization_distributions_combined.png, replace
-graph export figures/appendix/figureSI12_randomization_distributions_combined.pdf, replace
+graph export figures/appendix/figureED5_randomization_distributions_combined.pdf, replace
 
 rm figures/appendix/cross_panel.gph 
 rm figures/appendix/within_month.gph 
@@ -529,7 +529,7 @@ restore
 
 
 graph combine figures/appendix/USA_damage_kinked_maxs_15_SI.gph  figures/appendix/USA_damage_maxs_year_SI.gph , xsize(11) ysize(5)
-graph export figures/appendix/figureSI5_USA_damage_maxs.pdf, replace /* NEW SI FIGURE */
+graph export figures/appendix/figureSI2_USA_damage_maxs.pdf, replace /* NEW SI FIGURE */
 
   
   
@@ -627,8 +627,8 @@ graph save  "figures/scatter_rain_wind_full.gph", replace
 
 ///------------------------------------------- Combine figures to make full Figure 1
 
-graph combine figures/time_FL_maxs.gph figures/time_NJ_maxs.gph figures/state_FL_pred.gph figures/state_NJ_pred.gph  /Users/rachelyoung/Dropbox/Shared_Sol_Rachel/2022/for_journal/figures/USA_damage_kinked_maxs.gph /Users/rachelyoung/Dropbox/Shared_Sol_Rachel/2023/reviewer_response/figures/scatter_rain_wind_full.gph    /Users/rachelyoung/Dropbox/Shared_Sol_Rachel/2022/YoungHsiang_replication/figures/prediction_true_plot.gph  /Users/rachelyoung/Dropbox/Shared_Sol_Rachel/2022/YoungHsiang_replication/figures/randomization_boxplot_combined.gph , col(2) ysize(9) xsize(5)
-graph export figures/figure1_v2.pdf, replace /* THIS IS THE MAIN FIGURE */
+graph combine figures/time_FL_maxs.gph figures/time_NJ_maxs.gph figures/state_FL_pred.gph figures/state_NJ_pred.gph  figures/USA_damage_kinked_maxs.gph scatter_rain_wind_full.gph  figures/prediction_true_plot.gph figures/randomization_boxplot_combined.gph , col(2) ysize(9) xsize(5)
+graph export figures/figure1.pdf, replace 
 
 
 
