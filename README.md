@@ -1,9 +1,9 @@
 # Mortality Caused by Tropical Cyclones in the United States
- Program: ReadMe
+Program: ReadMe
  
  Authors: Rachel Young and Solomon Hsiang
  
- Date: 1/32/2024
+ Date: 6/14/2024
 
 ## Set Up
 
@@ -200,24 +200,28 @@ Figure 4 requires the data collection, regression, and projection step to be com
 
 
 
-SI Figures and Tables requires data collection, regression, and projection steps to be complete. 
+ED Figures and Tables, and SI Figures requires data collection, regression, and projection steps to be complete. 
+
+Extended data figures and tables:
+
+- Figure ED1 : figures/appendix/figureED1_windspeed_allstates.pdf ; created in 09-appendix-figures.do
+- Figure ED3 : figures/appendix/figureED3_mortality_allstates.pdf ; created in 09-appendix-figures.do
+- Figure ED4 : figures/appendix/figureED4_examining_model_fit.pdf ; created in 09-appendix-figures.do
+- Figure ED5 : figures/appendix/figureED5_randomization_distributions_combined.pdf ; created in 04-main-figure1.do
+- Figure ED6 : figures/appendix/figureED6_model_adapt_time_weight_combined.pdf ; created in 09-appendix-figures.do note: Figure ED6c : figures/appendix/APPENDIX_est_adaptation.gph ; created in 05-main-figure2.do
+- Figure ED7 : figures/appendix/figureED7_est_age_race_stacked.pdf ; created in 05-main-figure2.do
+- Figure ED8 : figures/appendix/figureED8_est_cubic_adaptation_combine.pdf ; created in 09-appendix-figures.do
+- Table ED1 : figures/appendix/TableED1_all_models_predicted_deaths.csv and figures/total_direct_deaths.csv; created in 09-appendix-figures.do
+- Table ED2 : figures/appendix/TableED2_all_outcomes_predicted_deaths.csv ; created in 09-appendix-figures.do
+
+Supplemental Information figures:
 
 - Figure SI1 : created in plotting_maps/plotting_maps.m
-- Figure SI2 : figures/appendix/figureSI2_windspeed_allstates.pdf ; created in 09-appendix-figures.do 
-- Figure SI4 : figures/appendix/figureSI4_mortality_allstates.pdf ; created in 09-appendix-figures.do
-- Figure SI5 : figures/appendix/figureSI5_USA_damage_maxs.pdf ; created in 04-main-figure1.do
-- Figure SI6 : figures/appendix/figureSI6_plot_6storms_rain_wind.pdf ; created in 10-appendix-rain-wind-maps.R
-- Figure SI7 : figures/appendix/figureSI7_maxs_histcdf.pdf ; created in 09-appendix-figures.do
-- Figure SI8 : figures/appendix/figureSI4_examining_model_fit.pdf ; created in 09-appendix-figures.do
-- Figure SI9 : figures/appendix/figureSI9_residual_combined.pdf ; created in 09-appendix-figures.do
-- Figure SI10 : figures/appendix/figureSI10_temperature_death_rate_state.pdf ; created in 09-appendix-figures.do
-- Figure SI12 : figures/appendix/figureSI12_randomization_distributions_combined.pdf ; created in 04-main-figure1.do
-- Figure SI13 : figures/appendix/figureSI13_model_adapt_time_weight_combined ; created in 09-appendix-figures.do
-	note: Figure SI13c : figures/appendix/APPENDIX_est_adaptation.png ; created in 05-main-figure2.do
-- Figure SI14 : figures/appendix/figureSI14_est_age_race_stacked.pdf ; created in 05-main-figure2.do
-- Figure SI15 : figures/appendix/figureSI15_est_cubic_adaptation_combine.pdf ; created in 09-appendix-figures.do 
-- Table SI1 : figures/appendix/TableSI1_all_models_predicted_deaths.csv and figures/total_direct_deaths.csv; created in 08-appendix-figures.do
-- Table SI2 : figures/appendix/TableSI2_all_outcomes_predicted_deaths.csv ; created in 08-appendix-figures.do
+- Figure SI2 : figures/appendix/figureSI2_USA_damage_maxs.pdf ; created in 04-main-figure1.do
+- Figure SI3 : figures/appendix/rain_wind_DOLLY_1968.pdf, figures/appendix/rain_wind_DAVID_1979.pdf, figures/appendix/rain_wind_ANDREW_1992.pdf, figures/appendix/rain_wind_KATE_1985.pdf, figures/appendix/rain_wind_IKE_2008.pdf, figures/appendix/rain_wind_IRENE_2011.pdf ; created in 10-appendix-rain-wind-maps.R and combined mannually
+- Figure SI4 : figures/appendix/figureSI4_maxs_histcdf.pdf ; created in 09-appendix-figures.do
+- Figure SI5 : figures/appendix/figureSI5_residual_combined.pdf ; created in 09-appendix-figures.do
+- Figure SI6 : figures/appendix/figureSI6_temperature_death_rate_state.pdf ; created in 09-appendix-figures.do
 
-Note Figure SI3 and SI11 are not generated programatically. 
+Note Figure ED2 and Figure SI7 are not generated programatically.
 
