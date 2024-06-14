@@ -8,7 +8,7 @@ disp("-------------------------STARTING APPENDIX-----------------------")
 use output/full_data_for_regression.dta, clear
 
 //---------------------------------------------------------------------------------
-//------------------------------------------ Figure SI4: all state mortality
+//------------------------------------------ Figure ED3: all state mortality
 //---------------------------------------------------------------------------------
 qui areg tdths_ttpop _iy_* _imt* _mi_* _iT_* _LL*_maxs, absorb(modate) 
 predict y_imt_TC3 if e(sample), xbd
@@ -17,13 +17,13 @@ gen modate_lbl = ym(year, month)
 format modate_lbl %tm
 
 tw (line tdths_ttpop modate_lbl, color(orange*2%50) subtitle(,size(small)) by(adm_name , note(""))) (sc y_imt_TC3 modate_lbl, msize(vtiny) color(cranberry%50) by(adm_name , note(""))) if year>=1950, xlabel(-120(240)660,format(%tmCY)) ylabel(50(25)125) legend(order(1 "Measured" 2 "Predicted") size(small)) xtitle("")  ytitle("Monthly All Cause Mortality Rate (per 100,000)", size(small)) ysize(10.5) xsize(9) 
-graph export figures/appendix/figureSI4_mortality_allstates.pdf, replace 
+graph export figures/appendix/figureED3_mortality_allstates.pdf, replace 
 
 //---------------------------------------------------------------------------------
-//------------------------------------------ Figure SI2: all state wind speeds
+//------------------------------------------ Figure ED1: all state wind speeds
 //---------------------------------------------------------------------------------
 tw bar maxs modate_lbl if year>=1950, by(adm_name , note("")) subtitle(,size(small)) color(blue) xlabel(-120(240)660,format(%tmCY)) xtitle("") ytitle("Monthly Maximum Windspeed (m/s)", size(small)) ysize(10) xsize(9) 
-graph export figures/appendix/figureSI2_windspeed_allstates.pdf, replace 
+graph export figures/appendix/figureED1_windspeed_allstates.pdf, replace 
 
 
 
@@ -31,7 +31,7 @@ graph export figures/appendix/figureSI2_windspeed_allstates.pdf, replace
 
 
 //---------------------------------------------------------------------------------	
-//-------------------------------------- Figure SI10: Plotting temperature
+//-------------------------------------- Figure SI6: Plotting temperature
 //---------------------------------------------------------------------------------
 
 use output/full_data_for_regression.dta, clear
@@ -72,12 +72,12 @@ replace temp_deaths_predict_hot = temp_deaths_predict_hot - r(min) if stfips == 
 }
 sort adm_id tavg
 tw line temp_deaths_rate_predict tavg, by(adm_name, note(" ")) xtitle("Average Temperature") ytitle("Predicted Death per 100,000") 
-graph export figures/appendix/figureSI10_temperature_death_rate_state.pdf, replace
+graph export figures/appendix/figureSI6_temperature_death_rate_state.pdf, replace
 
 
 
 //---------------------------------------------------------------------------------	
-//-------------------------------------------------  Figure SI8: Checking model fit
+//-------------------------------------------------  Figure ED4: Checking model fit
 //---------------------------------------------------------------------------------
 use output/full_data_for_regression.dta, clear
 
@@ -170,7 +170,7 @@ graph save figures/appendix/TC_wMonthFE_in_model_plots/TC_wMonthFE_in_model_plot
 
 
 graph combine figures/appendix/no_TC_in_model_plots/no_TC_in_model_plots.gph  figures/appendix/TC_temp_in_model_plots/TC_temp_in_model_plots.gph figures/appendix/TC_wMonthFE_in_model_plots/TC_wMonthFE_in_model_plots.gph, col(3)  ysize(5.25) xsize(10)
-graph export figures/appendix/figureSI8_examining_model_fit.pdf, replace
+graph export figures/appendix/figureED4_examining_model_fit.pdf, replace
 
 
 
@@ -179,7 +179,7 @@ graph export figures/appendix/figureSI8_examining_model_fit.pdf, replace
 
 
 //---------------------------------------------------------------------------------
-//---------------------- Figure SI7: Density and cumulative density wind speed
+//---------------------- Figure SI4: Density and cumulative density wind speed
 //---------------------------------------------------------------------------------
 
 
@@ -198,14 +198,14 @@ legend(ring(0) position(5)  col(1) size(small) order(1 "wind speed, including 0"
 graph save "figures/appendix/cdf_maxs.gph", replace
 
 graph combine "figures/appendix/hist_maxs_inset.gph" "figures/appendix/cdf_maxs.gph" , ysize(4) xsize(7)
-graph export "figures/appendix/figureSI7_maxs_histcdf.pdf" , replace
+graph export "figures/appendix/figureSI4_maxs_histcdf.pdf" , replace
 
 
 
 
 
 //---------------------------------------------------------------------------------
-//---------------------- Figure SI9: Distribution of the residuals
+//---------------------- Figure SI5: Distribution of the residuals
 //---------------------------------------------------------------------------------
 
 
@@ -232,14 +232,14 @@ graph save "figures/appendix/residual_modate.gph", replace
 restore
 
 graph combine "figures/appendix/residual_hist.gph" "figures/appendix/residual_modate.gph" , ysize(4) xsize(7)
-graph export "figures/appendix/figureSI9_residual_combined.pdf" , replace
+graph export "figures/appendix/figureSI5_residual_combined.pdf" , replace
 
 
 
 
 
 //---------------------------------------------------------------------------------	
-//--------Table SI1: Store out summary statistics all cause outcome
+//--------Table ED1: Store out summary statistics all cause outcome
 //---------------------------------------------------------------------------------	
 
 
@@ -265,7 +265,7 @@ estpost summarize dths_tot mort_m_linear mort_m_nonlinear mort_m_cubic mort_m_li
 estimates store total_`Y'
 local storelist = "`storelist' total_`Y'"
 }
-esttab `storelist' using figures/appendix/TableSI1_all_models_predicted_deaths.csv, cells("mean(fmt(3)) sum(fmt(0))") mtitle("Average Deaths/Month (1950 - 2015)" "Total TC Deaths (1950 - 2015)") replace
+esttab `storelist' using figures/appendix/TableED1_all_models_predicted_deaths.csv, cells("mean(fmt(3)) sum(fmt(0))") mtitle("Average Deaths/Month (1950 - 2015)" "Total TC Deaths (1950 - 2015)") replace
 
 preserve
 foreach Y of loc outcome_list {
@@ -276,7 +276,7 @@ estpost summarize dths_tot mort_m_linear mort_m_nonlinear mort_m_cubic mort_m_li
 estimates store total_`Y'
 local storelist = "`storelist' total_`Y'"
 }
-esttab `storelist' using figures/appendix/TableSI1_all_models_predicted_deaths.csv, cells("mean(fmt(3))") mtitle("Average Deaths/Month (2000 - 2015)") append
+esttab `storelist' using figures/appendix/TableED1_all_models_predicted_deaths.csv, cells("mean(fmt(3))") mtitle("Average Deaths/Month (2000 - 2015)") append
 restore
 
 
@@ -301,7 +301,7 @@ tab prop_total_cubic
 
 
 //---------------------------------------------------------------------------------	
-//--------Table SI2: Summary statistics for multiple outcomes
+//--------Table ED2: Summary statistics for multiple outcomes
 //---------------------------------------------------------------------------------	
 
 loc outcome_list "_0000_apop _0144_apop _4564_apop _6599_apop _black_bpop _white_wpop"
@@ -312,7 +312,7 @@ estpost summarize  mort_m_linear mort_m_cubic_adapt_pool24 p_total_m_cubic_adapt
 estimates store total_`Y'
 local storelist = "`storelist' total_`Y'"
 }
-esttab `storelist' using figures/appendix/TableSI2_all_outcomes_predicted_deaths.csv, cells("mean(fmt(3)) sum(fmt(0))") replace
+esttab `storelist' using figures/appendix/TableED2_all_outcomes_predicted_deaths.csv, cells("mean(fmt(3)) sum(fmt(0))") replace
 
 
 //--------Additional summary statistics for multiple outcomes
@@ -413,7 +413,7 @@ rm output/mort_TC_state_total_`m'_tdths_ttpop.dta
 
 
 //---------------------------------------------------------------------------------
-//--------------------------------------------------- Figure SI13b: time trends
+//--------------------------------------------------- Figure ED6b: time trends
 //---------------------------------------------------------------------------------
 // Use the 4 bin version
 use output/full_data_for_regression.dta, clear
@@ -491,7 +491,7 @@ graph save figures/appendix/est_by_timetrend_4bins.gph, replace
 
 
 //---------------------------------------------------------------------------------
-//--------------------------------------------------- weighted version of the linear model
+//--------------------------------------------------- ED6a: weighted version of the linear model
 //---------------------------------------------------------------------------------
 	use output/full_data_for_regression.dta, clear 
 	
@@ -550,7 +550,7 @@ graph save figures/appendix/est_by_timetrend_4bins.gph, replace
 */
 
 //---------------------------------------------------------------------------------
-//--------------------------------------------------- weighted version of the linear model
+//--------------------------------------------------- ED6a: weighted version of the linear model
 //---------------------------------------------------------------------------------
 /*-------- Poisson -------*/
 
@@ -672,7 +672,7 @@ tw (rarea CI1_linear CI2_linear lag, lwidth(none) fcolor(maroon%25)) ///
 	
 
 //---------------------------------------------------------------------------------
-//--------------------------------------------------- Figure SI13d: coastal population
+//--------------------------------------------------- Figure ED6d: coastal population
 //---------------------------------------------------------------------------------
 
 import excel using "./data/coastline-counties-list.xlsx",  first clear
@@ -806,7 +806,7 @@ tw (rarea CI1_s_main CI2_s_main xaxis, fcolor(gs14%75) lwidth(none)) ///
    
 
 graph combine figures/appendix/est_linear_weights.gph figures/appendix/est_by_timetrend_4bins.gph figures/appendix/APPENDIX_est_adpatation.gph figures/est_coastal_pop.gph, col(2) ysize(5.25) xsize(10)
-graph export figures/appendix/figureSI13_model_adapt_time_weight_combined.pdf, replace
+graph export figures/appendix/figureED6_model_adapt_time_weight_combined.pdf, replace
 
 rm figures/appendix/est_linear_weights.gph 
 rm figures/appendix/est_by_timetrend_4bins.gph 
@@ -905,7 +905,7 @@ gen mort_m_cubic_2groups_rate = mort_m_cubic_adapt_pool24/totalpop*100000
 
 
 //---------------------------------------------------------------------------------
-//---------------------- Figure SI15: Cubic model with adaptation (pooled 2-4 bins)
+//---------------------- Figure ED8: Cubic model with adaptation (pooled 2-4 bins)
 //---------------------------------------------------------------------------------
 
 
@@ -1154,7 +1154,7 @@ graph combine figures/appendix/spline_adapt2.gph figures/appendix/windspeed_kern
 graph save figures/appendix/est_a2_nonlinear3_180_v2.gph , replace
 
 graph combine figures/appendix/est_a1_nonlinear3_180_v2.gph figures/appendix/est_a2_nonlinear3_180_v2.gph, col(2) 
-graph export figures/appendix/figureSI15_est_cubic_adaptation_combine.pdf, replace
+graph export figures/appendix/figureED8_est_cubic_adaptation_combine.pdf, replace
 
 
 
