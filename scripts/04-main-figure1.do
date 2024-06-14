@@ -628,7 +628,7 @@ graph save  "figures/scatter_rain_wind_full.gph", replace
 ///------------------------------------------- Combine figures to make full Figure 1
 
 graph combine figures/time_FL_maxs.gph figures/time_NJ_maxs.gph figures/state_FL_pred.gph figures/state_NJ_pred.gph  figures/USA_damage_kinked_maxs.gph scatter_rain_wind_full.gph  figures/prediction_true_plot.gph figures/randomization_boxplot_combined.gph , col(2) ysize(9) xsize(5)
-graph export figures/figure1.pdf, replace 
+graph export figures/figure1.pdf, replace  /* THIS IS THE MAIN FIGURE */
 
 
 
