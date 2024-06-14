@@ -295,7 +295,7 @@ gen cvd_percent = B_dths_cvd_pop / stack_B_cause
 
 graph combine figures/appendix/est_by_age_totalpop.gph  figures/appendix/est_by_race_totalpop.gph , ysize(5) xsize(8)
 *graph export figures/appendix/est_age_race_stacked.png, replace
-graph export figures/appendix/figureSI14_est_age_race_stacked.pdf, replace
+graph export figures/appendix/figureED7_est_age_race_stacked.pdf, replace
 
 rm figures/appendix/est_by_age_totalpop.gph  
 rm figures/appendix/est_by_race_totalpop.gph
