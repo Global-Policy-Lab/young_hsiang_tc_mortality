@@ -114,7 +114,7 @@ Preparation of variables (such as creating fixed effects and leads) for the regr
 
 stata -b do scripts/01-prep-lags.do
 
-
+We also provide the assembled data needed to run scripts to create the main results (output/full_data_for_regression.dta), including the output of the randomization test (output/randomization). 
 
 ### 2. Regression model estimation:
 
