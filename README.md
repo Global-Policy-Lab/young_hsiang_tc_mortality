@@ -88,7 +88,7 @@ If you would rather do it step by step, see the description of each stage below.
 
 ### 1. Data collection and processing:
 
-All data is available for download here: https://zenodo.org/uploads/10459719. 
+All data is available for download here: https://zenodo.org/records/11662454. 
 
 The full data processing code is not included but the collected full data set is provided in DATA_hurricane_mortality_temp_month_state_19302015.dta .
 
